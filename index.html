@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARA MI QUERIDA PRINCESA 💖</title>
+
+  <!-- Fuente elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---- RESET Y BASE ---- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, #8B0000 0%, #6A0D0D 30%, #4A0000 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ---- FONDO CON PATRÓN ELEGANTE ---- */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+    }
+
+    /* ---- CONTENEDOR PRINCIPAL ---- */
+    .contenedor {
+      max-width: min(1200px, 95vw);
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---- CABECERA ---- */
+    .cabecera {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 25px 0;
+      border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: #FFD700;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      animation: latido 2s infinite;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .subtitulo {
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      color: #FFB6C1;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
+
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* ---- CONTENIDO PRINCIPAL ---- */
+    .contenido-principal {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: stretch;
+      justify-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .contenido-principal {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    /* ---- RECUADROS UNIFORMES ---- */
+    .recuadro {
+      width: 100%;
+      max-width: 500px;
+      min-height: 450px;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+      border: 3px solid rgba(255, 215, 0, 0.3);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: rgba(139, 0, 0, 0.15);
+    }
+
+    .recuadro:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Efecto de brillo sutil en los bordes */
+    .recuadro::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 18px;
+      box-shadow: inset 0 0 60px rgba(255, 215, 0, 0.1);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ---- RECUADRO DE TULIPANES (IZQUIERDA) ---- */
+    .recuadro-tulipanes {
+      background: 
+        linear-gradient(
+          rgba(139, 0, 0, 0.3),
+          rgba(106, 13, 13, 0.4)
+        );
+    }
+
+    /* Contenedor de imagen para tulipanes */
+    .contenedor-imagen-tulipanes {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .imagen-tulipanes {
+      width: 100%;
+      height: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 215, 0, 0.2);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    /* ---- RECUADRO DE HELEN (DERECHA) ---- */
+    .recuadro-helen {
+      background: 
+        linear-gradient(
+          rgba(139, 0, 0, 0.3),
+          rgba(106, 13, 13, 0.4)
+        );
+    }
+
+    /* Contenedor de imagen para Helen */
+    .contenedor-imagen-helen {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .imagen-helen {
+      width: 100%;
+      height: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 215, 0, 0.2);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    /* Títulos de los recuadros */
+    .titulo-recuadro {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 1.8rem;
+      color: #FFD700;
+      font-weight: 600;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      padding: 12px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+      z-index: 3;
+    }
+
+    /* Mensaje en el recuadro de Helen */
+    .mensaje-helen {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 0 20px;
+      z-index: 3;
+    }
+
+    .texto-mensaje-helen {
+      background: rgba(0, 0, 0, 0.6);
+      color: #FFE4E1;
+      font-size: 1.1rem;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: inline-block;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ---- MENSAJE FLOTANTE (aparece al tocar imagen) ---- */
+    .mensaje-flotante {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #B22222, #8B0000);
+      color: white;
+      padding: 22px;
+      border-radius: 14px;
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      display: none;
+      z-index: 100;
+      animation: aparecer 3s ease-in-out;
+      max-width: 90%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(255, 215, 0, 0.4);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    @keyframes aparecer {
+      0% { opacity: 0; transform: translate(-50%, 50px); }
+      20% { opacity: 1; transform: translate(-50%, 0); }
+      80% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, -30px); }
+    }
+
+    /* ---- POEMA SECRETO ---- */
+    .poema-secreto-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: 
+        linear-gradient(rgba(139, 0, 0, 0.85), rgba(106, 13, 13, 0.9)),
+        url('helen.jpeg') 
+        center/cover no-repeat;
+      color: white;
+      padding: 35px;
+      border-radius: 18px;
+      width: min(90vw, 500px);
+      max-height: 80vh;
+      overflow-y: auto;
+      display: none;
+      z-index: 200;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      border: 3px solid rgba(255, 215, 0, 0.4);
+      text-align: center;
+    }
+
+    .poema-secreto-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 18px;
+      box-shadow: inset 0 0 70px rgba(255, 215, 0, 0.15);
+      pointer-events: none;
+    }
+
+    .poema-secreto-container h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.4rem;
+      color: #FFD700;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .poema-secreto-container p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      margin-bottom: 18px;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 12px;
+      border-radius: 8px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .cerrar-poema {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: #FFD700;
+      font-size: 1.8rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cerrar-poema:hover {
+      transform: scale(1.2);
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    /* ---- BOTÓN SECRETO (LA LLAVE) ---- */
+    .boton-secreto {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: linear-gradient(135deg, #8B0000, #B22222);
+      border: none;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #FFD700;
+      z-index: 150;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .boton-secreto:hover {
+      transform: scale(1.15) rotate(15deg);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    /* ---- CORAZONES FLOTANTES ---- */
+    .corazon {
+      position: absolute;
+      font-size: 1.8em;
+      animation: flotar 8s linear infinite;
+      opacity: 0;
+      z-index: 1;
+      filter: drop-shadow(0 0 8px rgba(255, 20, 147, 0.8));
+    }
+
+    @keyframes flotar {
+      0% { 
+        transform: translateY(100vh) scale(0.5) rotate(0deg); 
+        opacity: 0; 
+      }
+      10% { opacity: 0.9; }
+      90% { opacity: 0.9; }
+      100% { 
+        transform: translateY(-20vh) scale(1) rotate(360deg); 
+        opacity: 0; 
+      }
+    }
+
+    /* ---- OVERLAY PARA MODALES ---- */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 99;
+      display: none;
+    }
+
+    /* ---- CONTROLES DE MÚSICA ---- */
+    .controles-musica {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: rgba(139, 0, 0, 0.85);
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      z-index: 150;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .btn-musica {
+      background: transparent;
+      border: none;
+      color: #FFD700;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-musica:hover {
+      transform: scale(1.3);
+    }
+
+    .texto-musica {
+      font-size: 1rem;
+      color: #FFE4E1;
+      font-weight: 500;
+    }
+
+    /* ---- RESPONSIVE ADICIONAL ---- */
+    @media (max-width: 768px) {
+      .contenedor {
+        padding: 15px;
+      }
+      
+      .cabecera {
+        margin-bottom: 30px;
+        padding: 20px 0;
+      }
+      
+      .recuadro {
+        min-height: 400px;
+        max-width: 100%;
+      }
+      
+      .imagen-tulipanes, .imagen-helen {
+        max-height: 320px;
+      }
+      
+      .titulo-recuadro {
+        font-size: 1.6rem;
+        padding: 10px;
+      }
+      
+      .texto-mensaje-helen {
+        font-size: 1rem;
+        padding: 8px 12px;
+      }
+      
+      .boton-secreto {
+        width: 55px;
+        height: 55px;
+        font-size: 1.7rem;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .controles-musica {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 18px;
+      }
+      
+      .poema-secreto-container {
+        padding: 25px;
+      }
+      
+      .poema-secreto-container h3 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cabecera {
+        padding: 15px 0;
+        margin-bottom: 25px;
+      }
+      
+      .recuadro {
+        min-height: 380px;
+      }
+      
+      .imagen-tulipanes, .imagen-helen {
+        max-height: 300px;
+      }
+      
+      .titulo-recuadro {
+        font-size: 1.5rem;
+      }
+      
+      .texto-mensaje-helen {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+      }
+      
+      .poema-secreto-container p {
+        font-size: 1.05rem;
+      }
+    }
+
+    /* ---- ESTILOS PARA CUANDO FALTAN IMÁGENES ---- */
+    .mensaje-falta-imagen {
+      text-align: center;
+      color: #FFD700;
+      font-size: 1.2rem;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      border: 2px dashed rgba(255, 215, 0, 0.3);
+      margin: 20px;
+    }
+
+    .contenedor-imagen-tulipanes .mensaje-falta-imagen,
+    .contenedor-imagen-helen .mensaje-falta-imagen {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Overlay para modales -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Contenedor principal -->
+  <div class="contenedor">
+    
+    <!-- Cabecera -->
+    <div class="cabecera">
+      <h1>Para usted, la mujer más hermosa y divina que mis ojos han visto 💕</h1>
+      <p class="subtitulo">Eres mi inspiración de cada día 💖</p>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenido-principal">
+      
+      <!-- Recuadro de tulipanes (IZQUIERDA) -->
+      <div class="recuadro recuadro-tulipanes">
+        <div class="contenedor-imagen-tulipanes">
+          <!-- Imagen de tulipanes -->
+          <img src="tulipanes.png" alt="Tulipanes rojos" class="imagen-tulipanes" id="imagenTulipanes">
+          <!-- Mensaje si la imagen no carga -->
+          <div class="mensaje-falta-imagen" id="mensajeTulipanes" style="display: none;">
+            💐 Tulipanes para ti, mi amor<br>
+            <small>Si no ves la imagen, asegúrate de que "tulipanes.png" esté en la misma carpeta</small>
+          </div>
+        </div>
+        <div class="titulo-recuadro">Sé que te gustan 💖</div>
+      </div>
+
+      <!-- Recuadro de Helen (DERECHA) -->
+      <div class="recuadro recuadro-helen">
+        <div class="contenedor-imagen-helen">
+          <!-- Imagen de Helen -->
+          <img src="helen.jpeg" alt="Mi preciosa Helen" class="imagen-helen" id="imagenHelen">
+          <!-- Mensaje si la imagen no carga -->
+          <div class="mensaje-falta-imagen" id="mensajeHelen" style="display: none;">
+            👑 Mi Reina Helen<br>
+            <small>Si no ves la imagen, asegúrate de que "helen.jpeg" esté en la misma carpeta</small>
+          </div>
+        </div>
+        <div class="mensaje-helen">
+          <div class="texto-mensaje-helen">
+            Mi Amorcito 💕<br>
+            La motivación de mis días
+          </div>
+        </div>
+        <div class="titulo-recuadro">Mi Reina Helen 👑</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje flotante (aparece al tocar imagen) -->
+  <div id="mensajeFlotante" class="mensaje-flotante">
+    "Cada día agradezco a Dios por ti.<br>
+    Eres la razón de mis sonrisas, mi paz en lo difícil<br>
+    y mi alegría en lo simple.<br>
+    Te amo con todo mi corazón." 🌷💖✨
+  </div>
+
+  <!-- Poema secreto -->
+  <div id="poemaSecreto" class="poema-secreto-container">
+    <button class="cerrar-poema" id="cerrarPoema">×</button>
+    <h3>Amor en la distancia</h3>
+    
+    <p>Aunque mis ojos no te alcancen,<br>
+    mi corazón te busca sin cesar,<br>
+    eres la voz que en silencio danza,<br>
+    la estrella que me guía al soñar.</p>
+
+    <p>No necesito tocar tu mano,<br>
+    para sentir que estás aquí,<br>
+    pues cada pensamiento temprano<br>
+    me susurra tu nombre a mí.</p>
+
+    <p>La distancia no apaga el fuego,<br>
+    ni el cariño que en mí floreció,<br>
+    porque aunque no te tenga cerca,<br>
+    mi alma contigo siempre vivió.</p>
+
+  </div>
+
+  <!-- Botón secreto -->
+  <button class="boton-secreto" id="botonSecreto">🔑</button>
+
+  <!-- Controles de música -->
+  <div class="controles-musica">
+    <button class="btn-musica" id="btnPlay">▶️</button>
+    <button class="btn-musica" id="btnPause">⏸️</button>
+    <span class="texto-musica">Música Romántica</span>
+  </div>
+
+  <!-- Audio -->
+  <audio id="musica" loop>
+    <source src="La distancia.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
+    // FUNCIÓN PARA VERIFICAR SI LAS IMÁGENES EXISTEN
+    function verificarImagen(url, elementoMensaje, elementoImagen) {
+      const img = new Image();
+      img.onload = function() {
+        // La imagen existe, ocultar mensaje de error
+        elementoMensaje.style.display = 'none';
+        elementoImagen.style.display = 'block';
+      };
+      img.onerror = function() {
+        // La imagen no existe, mostrar mensaje
+        elementoMensaje.style.display = 'flex';
+        elementoImagen.style.display = 'none';
+      };
+      img.src = url;
+    }
+
+    // Verificar ambas imágenes al cargar la página
+    window.addEventListener('load', function() {
+      const imagenTulipanes = document.getElementById('imagenTulipanes');
+      const mensajeTulipanes = document.getElementById('mensajeTulipanes');
+      const imagenHelen = document.getElementById('imagenHelen');
+      const mensajeHelen = document.getElementById('mensajeHelen');
+      
+      // Verificar imagen de tulipanes
+      verificarImagen('tulipanes.png', mensajeTulipanes, imagenTulipanes);
+      
+      // Verificar imagen de Helen
+      verificarImagen('helen.jpeg', mensajeHelen, imagenHelen);
+      
+      // Intentar cargar imágenes alternativas si las principales no existen
+      setTimeout(function() {
+        if (mensajeTulipanes.style.display === 'flex') {
+          // Intentar con imagen online de tulipanes como respaldo
+          imagenTulipanes.src = 'https://images.unsplash.com/photo-1578948856697-db91d246b7b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80';
+          verificarImagen(imagenTulipanes.src, mensajeTulipanes, imagenTulipanes);
+        }
+        
+        if (mensajeHelen.style.display === 'flex') {
+          // Intentar con imagen online de retrato como respaldo
+          imagenHelen.src = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80';
+          verificarImagen(imagenHelen.src, mensajeHelen, imagenHelen);
+        }
+      }, 2000);
+    });
+
+    // CORAZONES FLOTANTES
+    const coloresCorazones = ["#FF1493", "#FF69B4", "#DC143C", "#FF4500", "#FFD700"];
+    
+    function crearCorazon() {
+      const corazon = document.createElement("div");
+      corazon.className = "corazon";
+      corazon.innerHTML = "❤";
+      corazon.style.left = Math.random() * window.innerWidth + "px";
+      corazon.style.color = coloresCorazones[Math.floor(Math.random() * coloresCorazones.length)];
+      corazon.style.fontSize = (Math.random() * 25 + 20) + "px";
+      corazon.style.animationDuration = (Math.random() * 6 + 7) + "s";
+      corazon.style.animationDelay = Math.random() * 3 + "s";
+      document.body.appendChild(corazon);
+
+      setTimeout(() => corazon.remove(), 12000);
+    }
+    
+    // Crear corazones periódicamente
+    setInterval(crearCorazon, 700);
+    
+    // Crear algunos corazones iniciales
+    for (let i = 0; i < 12; i++) {
+      setTimeout(crearCorazon, i * 250);
+    }
+
+    // ELEMENTOS DEL DOM
+    const musica = document.getElementById("musica");
+    const mensajeFlotante = document.getElementById("mensajeFlotante");
+    const recuadroTulipanes = document.querySelector(".recuadro-tulipanes");
+    const recuadroHelen = document.querySelector(".recuadro-helen");
+    const botonSecreto = document.getElementById("botonSecreto");
+    const poemaSecreto = document.getElementById("poemaSecreto");
+    const cerrarPoema = document.getElementById("cerrarPoema");
+    const overlay = document.getElementById("overlay");
+    const btnPlay = document.getElementById("btnPlay");
+    const btnPause = document.getElementById("btnPause");
+
+    // MENSAJE AL TOCAR CUALQUIER RECUADRO
+    recuadroTulipanes.addEventListener("click", () => {
+      musica.play();
+      mensajeFlotante.style.display = "block";
+      mensajeFlotante.style.animation = "aparecer 3s ease-in-out";
+
+      setTimeout(() => {
+        mensajeFlotante.style.display = "none";
+      }, 3000);
+    });
+
+    recuadroHelen.addEventListener("click", () => {
+      musica.play();
+      mensajeFlotante.style.display = "block";
+      mensajeFlotante.style.animation = "aparecer 3s ease-in-out";
+
+      setTimeout(() => {
+        mensajeFlotante.style.display = "none";
+      }, 3000);
+    });
+
+    // MOSTRAR POEMA SECRETO
+    botonSecreto.addEventListener("click", () => {
+      poemaSecreto.style.display = "block";
+      overlay.style.display = "block";
+    });
+
+    // CERRAR POEMA SECRETO
+    cerrarPoema.addEventListener("click", cerrarPoemaSecreto);
+    overlay.addEventListener("click", cerrarPoemaSecreto);
+
+    function cerrarPoemaSecreto() {
+      poemaSecreto.style.display = "none";
+      overlay.style.display = "none";
+    }
+
+    // CONTROLES DE MÚSICA
+    btnPlay.addEventListener("click", () => {
+      musica.play();
+      btnPlay.style.opacity = "0.7";
+      btnPause.style.opacity = "1";
+    });
+
+    btnPause.addEventListener("click", () => {
+      musica.pause();
+      btnPause.style.opacity = "0.7";
+      btnPlay.style.opacity = "1";
+    });
+
+    // Efecto de opacidad inicial
+    btnPlay.style.opacity = "1";
+    btnPause.style.opacity = "0.7";
+
+    // CERRAR POEMA CON TECLA ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        cerrarPoemaSecreto();
+      }
+    });
+
+    // PREVENIR DESPLAZAMIENTO CUANDO EL POEMA ESTÁ ABIERTO
+    poemaSecreto.addEventListener('wheel', function(e) {
+      e.stopPropagation();
+    });
+
+    // EFECTO DE PARPADEO SUAVE EN EL TÍTULO
+    const titulo = document.querySelector('h1');
+    setInterval(() => {
+      titulo.style.textShadow = `0 0 ${15 + Math.random() * 12}px rgba(255, 215, 0, ${0.5 + Math.random() * 0.4})`;
+    }, 1800);
+
+    // EFECTO ESPECIAL PARA LAS IMÁGENES
+    const imagenes = document.querySelectorAll('.imagen-tulipanes, .imagen-helen');
+    imagenes.forEach(img => {
+      img.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.03)';
+        this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+        this.style.boxShadow = '0 8px 25px rgba(255, 215, 0, 0.3)';
+      });
+      
+      img.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.4)';
+      });
+    });
+  </script>
+
+</body>
+</html>
