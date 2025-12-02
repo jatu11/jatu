@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PARA MI QUERIDA PRINCESA 💖</title>
+
+  <!-- Fuente elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #ffc2d1, #ffafc9);
+    }
+
+    /* ---- TÍTULO RESPONSIVE ---- */
+    h1 {
+      margin-top: 30px;
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      font-weight: 700;
+      animation: latido 1.5s infinite;
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+      line-height: 1.2;
+      text-shadow: 2px 2px 8px rgba(255, 0, 150, 0.4);
+    }
+
+    /* ---- SUBTÍTULO ---- */
+    p {
+      font-size: clamp(1rem, 2.2vw, 1.4rem);
+      margin-top: 15px;
+      position: relative;
+      z-index: 2;
+      font-weight: 400;
+      text-shadow: 1px 1px 4px rgba(255, 0, 120, 0.3);
+    }
+
+    @keyframes latido {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    /* ---- IMAGEN ---- */
+    .tulipanes {
+      margin-top: 30px;
+      width: min(260px, 60vw);
+      cursor: pointer;
+      border-radius: 12px;
+      animation: latido 2s infinite;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* ---- CORAZONES ---- */
+    .corazon {
+      position: absolute;
+      font-size: 2em;
+      animation: flotar 10s linear infinite;
+      opacity: 0.9;
+    }
+    @keyframes flotar {
+      0% { transform: translateY(100vh) scale(0.6); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-20vh) scale(1.3); opacity: 0; }
+    }
+
+    /* ---- MENSAJE QUE SALE AL TOCAR LOS TULIPANES ---- */
+    .mensaje {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 0, 100, 0.85);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      display: none;
+      z-index: 3;
+      animation: aparecer 3s ease-in-out;
+      max-width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    @keyframes aparecer {
+      0% { opacity: 0; transform: translate(-50%, 50px); }
+      20% { opacity: 1; transform: translate(-50%, 0); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -40px); }
+    }
+
+    /* ---- BOTÓN SECRETO (LA LLAVE) ---- */
+    .secreto {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 1.8em;
+      cursor: pointer;
+      color: gold;
+      z-index: 4;
+      transition: transform 0.2s;
+    }
+
+    .secreto:hover {
+      transform: scale(1.2);
+    }
+
+    /* ---- RECUADRO DEL POEMA ---- */
+    .mensajeSecreto {
+      position: fixed;
+      bottom: 60px;
+      right: 15px;
+      background: rgba(255, 0, 100, 0.92);
+      color: white;
+      padding: 20px 22px;
+      border-radius: 12px;
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      width: 300px;
+      max-height: 70vh;
+      overflow-y: auto;
+      display: none;
+      z-index: 4;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-align: left;
+      line-height: 1.4;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1> PARA USTED, LA MUJER MÁS HERMOSA Y DIVINA QUE MIS OJOS HAN VISTO 💕</h1>
+  <p>Eres mi inspiración en cada nuevo día 💖</p>
+
+  <!-- Imagen -->
+  <img src="tulipanes.png" alt="Tulipanes" class="tulipanes">
+
+  <!-- Música -->
+  <audio id="musica" loop>
+    <source src="Cuerpo a Cuerpo.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Texto que aparece al tocar la imagen -->
+  <div id="mensaje" class="mensaje">
+    "Cada día agradezco a Dios por ti.  
+    Eres la razón de mis sonrisas, mi paz en lo difícil  
+    y mi alegría en lo simple.  
+    Te amo con todo mi corazón." 🌷💖✨
+  </div>
+
+  <!-- Botón secreto -->
+  <button class="secreto">🔑</button>
+
+  <!-- Mensaje secreto -->
+  <div id="mensajeSecreto" class="mensajeSecreto">
+    <p><strong>Amor en la distancia</strong></p>
+
+    <p>Aunque mis ojos no te alcancen,<br>
+    mi corazón te busca sin cesar,<br>
+    eres la voz que en silencio danza,<br>
+    la estrella que me guía al soñar.</p>
+
+    <p>No necesito tocar tu mano,<br>
+    para sentir que estás aquí,<br>
+    pues cada pensamiento temprano<br>
+    me susurra tu nombre a mí.</p>
+
+    <p>La distancia no apaga el fuego,<br>
+    ni el cariño que en mí floreció,<br>
+    porque aunque no te tenga cerca,<br>
+    mi alma contigo siempre vivió.</p>
+
+    <p>Y cuando el destino nos reúna,<br>
+    será como un amanecer,<br>
+    donde el tiempo y la espera se fundan,<br>
+    y mi abrazo te diga: “al fin, mujer”.</p>
+  </div>
+
+
+  <script>
+    /* CORAZONES ALEATORIOS */
+    const colores = ["red", "deeppink", "purple", "hotpink", "crimson"];
+    function crearCorazon() {
+      const corazon = document.createElement("div");
+      corazon.className = "corazon";
+      corazon.innerHTML = "❤";
+      corazon.style.left = Math.random() * window.innerWidth + "px";
+      corazon.style.color = colores[Math.floor(Math.random() * colores.length)];
+      corazon.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      document.body.appendChild(corazon);
+
+      setTimeout(() => corazon.remove(), 10000);
+    }
+    setInterval(crearCorazon, 500);
+
+    /* MENSAJE Y MÚSICA */
+    const musica = document.getElementById("musica");
+    const mensaje = document.getElementById("mensaje");
+
+    document.querySelector(".tulipanes").addEventListener("click", () => {
+      musica.play();
+      mensaje.style.display = "block";
+      mensaje.style.animation = "aparecer 3s ease-in-out";
+
+      setTimeout(() => {
+        mensaje.style.display = "none";
+      }, 10000);
+    });
+
+    /* POEMA SECRETO */
+    const botonSecreto = document.querySelector(".secreto");
+    const mensajeSecreto = document.getElementById("mensajeSecreto");
+
+    botonSecreto.addEventListener("click", () => {
+      mensajeSecreto.style.display = "block";
+      setTimeout(() => { mensajeSecreto.style.display = "none"; }, 15000);
+    });
+  </script>
+
+</body>
+</html>
